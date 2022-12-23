@@ -26,6 +26,11 @@ RUN dnf install -y bash diffutils git git-lfs iproute jq less lsof man nano proc
 # neovim
 RUN dnf install -y neovim python3-neovim && dnf clean all
 
+# nodejs
+# https://github.com/che-incubator/che-code/tree/main/build/dockerfiles#running-visual-studio-code---open-source-code---oss-in-a-ubi9-based-container
+RUN dnf install -y nodejs
+ENV VSCODE_NODEJS_RUNTIME_DIR="/usr/bin"
+
 ## gh-cli
 RUN \
     TEMP_DIR="$(mktemp -d)"; \
