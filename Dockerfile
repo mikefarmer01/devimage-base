@@ -92,6 +92,7 @@ RUN \
 
 USER 10001
 ENV HOME=/home/user
+ENV PATH=${PATH}:${HOME}/.local/bin
 WORKDIR /projects
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD ["tail", "-f", "/dev/null"]
